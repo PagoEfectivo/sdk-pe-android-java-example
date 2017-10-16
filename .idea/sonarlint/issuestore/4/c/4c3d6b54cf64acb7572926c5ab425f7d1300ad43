@@ -1,0 +1,11 @@
+
+œsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«à¯8ÓèŠ²ò+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8¾¤İ±ò+
+ssquid:S1450"WRemove the "instance" field and declare it as a local variable in the relevant methods.(¿ÛÆÖ8ïÿÖ±ò+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¿ç›Çşÿÿÿÿ8ó§×±ò+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ş¡°ûÿÿÿÿ8ó§×±ò+
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¶·„¶8ó§×±ò+
+œsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«à¯8¾¤İ±ò+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8ÓèŠ²ò+
+jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(æšêë8ïÿÖ±ò+
+Hsquid:S1068",Remove this unused "instance" private field.(¿ÛÆÖ8ïÿÖ±ò+
