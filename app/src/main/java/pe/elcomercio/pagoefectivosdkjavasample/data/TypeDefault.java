@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample;
+package pe.elcomercio.pagoefectivosdkjavasample.data;
 
 /**
  * Created by tohure on 16/10/17.

@@ -17,3 +17,11 @@ Papp/src/main/java/pe/elcomercio/pagoefectivosdkjavasample/SearchCipActivity.jav
 Yapp/src/main/java/pe/elcomercio/pagoefectivosdkjavasample/PagoEfectivoSDKApplication.java,8/9/89a1791a6fbed7ab25d1e04423879a15e59ca0c4
 ‚
 Rapp/src/main/java/pe/elcomercio/pagoefectivosdkjavasample/GenerateCipActivity.java,4/c/4c3d6b54cf64acb7572926c5ab425f7d1300ad43
+|
+Lapp/src/main/java/pe/elcomercio/pagoefectivosdkjavasample/CustomAdapter.java,3/c/3cbb0dfb970b4c227387f255916c4a9178195754
+z
+Japp/src/main/java/pe/elcomercio/pagoefectivosdkjavasample/TypeDefault.java,e/3/e3f33ccbb7f352875536a8bdbf91eed6a780162b
+{
+Kapp/src/main/java/pe/elcomercio/pagoefectivosdkjavasample/TypeCurrency.java,e/3/e3023ca400f9a00446e7a2f15366fad90882bf35
+{
+Kapp/src/main/java/pe/elcomercio/pagoefectivosdkjavasample/TypeDocument.java,f/a/fa79795efb7e3a87afacc135ad68a252c0b3091e
