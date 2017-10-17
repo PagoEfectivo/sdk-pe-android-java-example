@@ -1,11 +1,8 @@
 
-œsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«à¯8ÓèŠ²ò+
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8¾¤İ±ò+
-ssquid:S1450"WRemove the "instance" field and declare it as a local variable in the relevant methods.(¿ÛÆÖ8ïÿÖ±ò+
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¿ç›Çşÿÿÿÿ8ó§×±ò+
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ş¡°ûÿÿÿÿ8ó§×±ò+
-squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¶·„¶8ó§×±ò+
-œsquid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«à¯8¾¤İ±ò+
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8ÓèŠ²ò+
 jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(æšêë8ïÿÖ±ò+
-Hsquid:S1068",Remove this unused "instance" private field.(¿ÛÆÖ8ïÿÖ±ò+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8û¡³¶ò+
+vsquid:UselessImportCheck"HRemove this unused import 'pe.elcomercio.pagoefectivosdk.util.Language'.(Áò„„ÿÿÿÿÿ8ÎŒ‰ºò+
+¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×şÿÿÿÿ8‚¦¯¶ò+
+Rsquid:S1068"1Remove this unused "txtDateExpiry" private field.(¥çÖÈıÿÿÿÿ8®İ™»ò+
+}squid:S1450"\Remove the "txtDateExpiry" field and declare it as a local variable in the relevant methods.(¥çÖÈıÿÿÿÿ8®İ™»ò+
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆØ»ü8®İ™»ò+

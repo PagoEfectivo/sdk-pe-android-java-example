@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample;
+package pe.elcomercio.pagoefectivosdkjavasample.ui;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,7 +18,10 @@ import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipError;
 import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipRequest;
 import pe.elcomercio.pagoefectivosdk.util.Currency;
 import pe.elcomercio.pagoefectivosdk.util.DocumentType;
-import pe.elcomercio.pagoefectivosdk.util.Language;
+import pe.elcomercio.pagoefectivosdkjavasample.R;
+import pe.elcomercio.pagoefectivosdkjavasample.data.CustomSpinnerAdapter;
+import pe.elcomercio.pagoefectivosdkjavasample.data.TypeCurrency;
+import pe.elcomercio.pagoefectivosdkjavasample.data.TypeDocument;
 
 public class GenerateCipActivity extends AppCompatActivity implements CipListener {
 
@@ -39,12 +42,11 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
     private EditText txtUserCodeCountry;
     private EditText txtAdminEmail;
 
+    private CustomSpinnerAdapter customSpinnerAdapter;
     private Currency currentCurrency;
     private DocumentType currentDocument;
 
     private Toast toastDialog;
-
-    private CustomAdapter customAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,13 +75,13 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
 
         //Init UI
         Spinner spiCurrency = (Spinner) findViewById(R.id.spiCurrency);
-        spiCurrency.setAdapter(new CustomAdapter(this, itemsCurrency));
+        spiCurrency.setAdapter(new CustomSpinnerAdapter(this, itemsCurrency));
 
         spiCurrency.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                customAdapter = (CustomAdapter) parent.getAdapter();
-                TypeCurrency currency = (TypeCurrency) customAdapter.getItem(position);
+                customSpinnerAdapter = (CustomSpinnerAdapter) parent.getAdapter();
+                TypeCurrency currency = (TypeCurrency) customSpinnerAdapter.getItem(position);
                 currentCurrency = currency.getCurrency();
             }
 
@@ -100,13 +102,13 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         txtUserCountry = (EditText) findViewById(R.id.txtUserCountry);
 
         Spinner spiUserDocumentType = (Spinner) findViewById(R.id.spiUserDocumentType);
-        spiUserDocumentType.setAdapter(new CustomAdapter(this, itemsDocumentType));
+        spiUserDocumentType.setAdapter(new CustomSpinnerAdapter(this, itemsDocumentType));
 
         spiUserDocumentType.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                customAdapter = (CustomAdapter) parent.getAdapter();
-                TypeDocument document = (TypeDocument) customAdapter.getItem(position);
+                customSpinnerAdapter = (CustomSpinnerAdapter) parent.getAdapter();
+                TypeDocument document = (TypeDocument) customSpinnerAdapter.getItem(position);
                 currentDocument = document.getDocumentType();
             }
 
@@ -132,7 +134,9 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
 
         cipRequest.setCurrency(currentCurrency);
 
-        if (!txtAmount.getText().toString().equals("")) { cipRequest.setAmount(Double.parseDouble(txtAmount.getText().toString()));}
+        if (!txtAmount.getText().toString().isEmpty()) {
+            cipRequest.setAmount(Double.parseDouble(txtAmount.getText().toString()));
+        }
         cipRequest.setTransactionCode(txtTransactionCode.getText().toString());
         //cipRequest.setDateExpiry(txtDateExpiry.getText().toString());
         cipRequest.setAdditionalData(txtAdditionalData.getText().toString());

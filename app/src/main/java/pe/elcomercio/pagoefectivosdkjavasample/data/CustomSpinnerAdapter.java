@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample;
+package pe.elcomercio.pagoefectivosdkjavasample.data;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -13,12 +13,12 @@ import java.util.List;
  * Created by tohure on 16/10/17.
  */
 
-public class CustomAdapter extends BaseAdapter {
+public class CustomSpinnerAdapter extends BaseAdapter {
 
     private Context context;
     private List<Object> objects;
 
-    public CustomAdapter(Context context, List<Object> objects) {
+    public CustomSpinnerAdapter(Context context, List<Object> objects) {
         super();
         this.context = context;
         this.objects = objects;

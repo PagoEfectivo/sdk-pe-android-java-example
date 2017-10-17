@@ -3,7 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="main_title">Bienvenido a Pago Efectivo SDK</string>
     <string name="generate_cip_button">Generar Cip</string>
-    <string name="list_cip_button">Listar Cip</string>
+    <string name="list_cip_button">Buscar Cips</string>
     <string name="currency">currency</string>
     <string name="amount">amount</string>
     <string name="transaction_code">transactionCode</string>
@@ -35,5 +35,8 @@
     <string name="currency_usd">Dólares</string>
     <string name="generating_cip">Generando CIP</string>
     <string name="cip_generated">Cip Generado</string>
+    <string name="search_cips">Buscar CIPs</string>
+    <string name="add_row">Agregar una fila</string>
+    <string name="searching_cip">Buscando CIPs</string>
 
 </resources>
