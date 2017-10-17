@@ -38,5 +38,15 @@
     <string name="search_cips">Buscar CIPs</string>
     <string name="add_row">Agregar una fila</string>
     <string name="searching_cip">Buscando CIPs</string>
+    <string name="method_payment_name">Métodos de Pago</string>
+    <string name="pe_mobile_internet">Pago Efectivo Móvil y/o Internet</string>
+    <string name="pe_agents_agency">Pago Efectivo Agentes y Agencias</string>
+    <string name="pe_visa">Visa</string>
+    <string name="pe_master_card">Master Card</string>
+    <string name="pe_american_express">American Express</string>
+    <string name="pe_dinners_club">Dinners Club</string>
+    <string name="serialize_cip">serialize_cip</string>
+    <string name="type_payment">type_payment</string>
+    <string name="payment_method_not_available">No disponible este método de pago</string>
 
 </resources>

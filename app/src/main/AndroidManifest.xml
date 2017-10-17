@@ -17,7 +17,6 @@
         <activity
             android:name=".ui.SplashActivity"
             android:theme="@style/SplashAppTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,6 +25,9 @@
         </activity>
         <activity android:name=".ui.GenerateCipActivity" />
         <activity android:name=".ui.SearchCipActivity" />
+        <activity
+            android:name=".ui.PaymentMethodActivity"
+            android:label="@string/method_payment_name" />
     </application>
 
 </manifest>

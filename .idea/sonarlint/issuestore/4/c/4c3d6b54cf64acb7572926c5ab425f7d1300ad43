@@ -1,8 +1,0 @@
-
-jsquid:MaximumInheritanceDepth"<This class has 7 parents which is greater than 5 authorized.(æšêë8ïÿÖ±ò+
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×þÿÿÿÿ8û¡³¶ò+
-vsquid:UselessImportCheck"HRemove this unused import 'pe.elcomercio.pagoefectivosdk.util.Language'.(Áò„„ÿÿÿÿÿ8ÎŒ‰ºò+
-¢squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹Æº×þÿÿÿÿ8‚¦¯¶ò+
-Rsquid:S1068"1Remove this unused "txtDateExpiry" private field.(¥çÖÈýÿÿÿÿ8®Ý™»ò+
-}squid:S1450"\Remove the "txtDateExpiry" field and declare it as a local variable in the relevant methods.(¥çÖÈýÿÿÿÿ8®Ý™»ò+
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ˆØ»ü8®Ý™»ò+

@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.data;
+package pe.elcomercio.pagoefectivosdkjavasample.model;
 
 import pe.elcomercio.pagoefectivosdk.util.DocumentType;
 
@@ -6,11 +6,11 @@ import pe.elcomercio.pagoefectivosdk.util.DocumentType;
  * Created by tohure on 16/10/17.
  */
 
-public class TypeDocument extends TypeDefault{
+public class TypeDocumentEntity extends TypeDefaultEntity {
 
     private DocumentType documentType;
 
-    public TypeDocument(String name, DocumentType documentType) {
+    public TypeDocumentEntity(String name, DocumentType documentType) {
         super(name);
         this.documentType = documentType;
     }
