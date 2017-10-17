@@ -4,4 +4,36 @@
     <string name="main_title">Bienvenido a Pago Efectivo SDK</string>
     <string name="generate_cip_button">Generar Cip</string>
     <string name="list_cip_button">Listar Cip</string>
+    <string name="currency">currency</string>
+    <string name="amount">amount</string>
+    <string name="transaction_code">transactionCode</string>
+    <string name="date_expiry">dateExpiry</string>
+    <string name="additional_data">additionalData</string>
+    <string name="payment_concept">paymentConcept</string>
+    <string name="user_email">userEmail</string>
+    <string name="user_name">userName</string>
+    <string name="user_last_name">userLastName</string>
+    <string name="user_ubigeo">userUbigeo</string>
+    <string name="user_country">userCountry</string>
+    <string name="user_document_type">userDocumentType</string>
+    <string name="user_document_number">userDocumentNumber</string>
+    <string name="user_phone">userPhone</string>
+    <string name="user_code_country">userCodeCountry</string>
+    <string name="admin_email">adminEmail</string>
+    <string name="title_activity_list_cips">ListCipsActivity</string>
+
+    <string name="select_one_spinner">Select one…</string>
+
+    <string name="document_dni">DNI</string>
+    <string name="document_pas">Pasaporte</string>
+
+    <string name="document_lmi">Libreta Militar</string>
+    <string name="document_par">Partida de Nacimiento</string>
+    <string name="document_nan">Otros</string>
+
+    <string name="currency_pen">Soles</string>
+    <string name="currency_usd">Dólares</string>
+    <string name="generating_cip">Generando CIP</string>
+    <string name="cip_generated">Cip Generado</string>
+
 </resources>
