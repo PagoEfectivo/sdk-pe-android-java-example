@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.data;
+package pe.elcomercio.pagoefectivosdkjavasample.model;
 
 import pe.elcomercio.pagoefectivosdk.util.Currency;
 
@@ -6,11 +6,11 @@ import pe.elcomercio.pagoefectivosdk.util.Currency;
  * Created by tohure on 16/10/17.
  */
 
-public class TypeCurrency extends TypeDefault {
+public class TypeCurrencyEntity extends TypeDefaultEntity {
 
     private Currency currency;
 
-    public TypeCurrency(String name, Currency currency) {
+    public TypeCurrencyEntity(String name, Currency currency) {
         super(name);
         this.currency = currency;
     }

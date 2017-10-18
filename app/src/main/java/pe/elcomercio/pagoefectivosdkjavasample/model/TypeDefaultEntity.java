@@ -1,14 +1,14 @@
-package pe.elcomercio.pagoefectivosdkjavasample.data;
+package pe.elcomercio.pagoefectivosdkjavasample.model;
 
 /**
  * Created by tohure on 16/10/17.
  */
 
-class TypeDefault {
+public class TypeDefaultEntity {
 
     private String name;
 
-    TypeDefault(String name) {
+    TypeDefaultEntity(String name) {
         this.name = name;
     }
 

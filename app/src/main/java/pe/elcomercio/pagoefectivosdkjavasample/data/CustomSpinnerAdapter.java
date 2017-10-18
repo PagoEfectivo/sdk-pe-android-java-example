@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import pe.elcomercio.pagoefectivosdkjavasample.model.TypeDefaultEntity;
+
+
 /**
  * Created by tohure on 16/10/17.
  */
@@ -55,8 +58,8 @@ public class CustomSpinnerAdapter extends BaseAdapter {
             holder = (ItemViewHolder) convertView.getTag();
         }
 
-        if (objects.get(position) instanceof TypeDefault) {
-            TypeDefault entityDefault = (TypeDefault) objects.get(position);
+        if (objects.get(position) instanceof TypeDefaultEntity) {
+            TypeDefaultEntity entityDefault = (TypeDefaultEntity) objects.get(position);
             holder.lblSpinnerItem.setText(entityDefault.getName());
         }
 
