@@ -1,8 +1,8 @@
 package pe.elcomercio.pagoefectivosdkjavasample.ui;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
@@ -57,26 +57,16 @@ public class PaymentMethodActivity extends AppCompatActivity {
         RecyclerView rcvPaymentMethods = (RecyclerView) findViewById(R.id.rcvPaymentMethods);
         rcvPaymentMethods.setAdapter(paymentMethodAdapter);
         rcvPaymentMethods.setHasFixedSize(true);
-
-
-        /*StringBuilder cipResult = new StringBuilder();
-        cipResult.append(getString(R.string.cip_generated));
-        cipResult.append("\n\n");
-        cipResult.append(" - CIP: ").append(cip.getCip()).append("\n");
-        cipResult.append(" - AMOUNT: ").append(cip.getAmount()).append("\n");
-        cipResult.append(" - CURRENCY: ").append(cip.getCurrency()).append("\n");
-        cipResult.append(" - DATEXPIRY: ").append(cip.getDateExpiry()).append("\n");
-        cipResult.append(" - TRANSACTIONCODE: ").append(cip.getTransactionCode()).append("\n");*/
-
-        //showMessage(cipResult.toString());
-
     }
 
     private void whereToPay(int typeItem) {
         switch (typeItem){
             case PAGO_EFECTIVO_MOVIL:
             case PAGO_EFECTIVO_AGENTES:
-                Toast.makeText(this, "Go to pay "+typeItem, Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, WhereToPayActivity.class);
+                intent.putExtra(getString(R.string.serialize_cip), cip);
+                intent.putExtra(getString(R.string.type_method_payment),typeItem);
+                startActivity(intent);
                 break;
             default:
                 Toast.makeText(this, R.string.payment_method_not_available, Toast.LENGTH_SHORT).show();

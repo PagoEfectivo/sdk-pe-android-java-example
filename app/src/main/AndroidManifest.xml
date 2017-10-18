@@ -28,6 +28,7 @@
         <activity
             android:name=".ui.PaymentMethodActivity"
             android:label="@string/method_payment_name" />
+        <activity android:name=".ui.WhereToPayActivity" />
     </application>
 
 </manifest>
