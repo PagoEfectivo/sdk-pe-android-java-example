@@ -63,5 +63,14 @@
     <string name="agent_wester">WESTERN UNION</string>
     <string name="agent_full_charge">FULL CARGA</string>
 
-    <string name="currency_soles">S/. %1$f</string>
+    <string name="currency_soles">S/. %1$s</string>
+    <string name="summary_payment_name">Resumen</string>
+    <string name="follow_this_steps_subtitle">Sigue estos pasos</string>
+
+    <string name="title_summary_payment">Paga S/. %1$s en %2$s para reservar tu compra</string>
+    <string name="step_one_for_payment">1. Ve a tu agente %1$s más cercano</string>
+    <string name="step_two_for_payment">2. Indícale que harás un pago a Pago Efectivo - Código: 02186</string>
+    <string name="step_three_for_payment">3. Díctale al cajero este código CIP: %1$s</string>
+    <string name="agent_payment">agentPayment</string>
+
 </resources>

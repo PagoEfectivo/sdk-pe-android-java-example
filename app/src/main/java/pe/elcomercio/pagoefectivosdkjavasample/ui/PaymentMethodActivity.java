@@ -3,6 +3,7 @@ package pe.elcomercio.pagoefectivosdkjavasample.ui;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
@@ -57,15 +58,16 @@ public class PaymentMethodActivity extends AppCompatActivity {
         RecyclerView rcvPaymentMethods = (RecyclerView) findViewById(R.id.rcvPaymentMethods);
         rcvPaymentMethods.setAdapter(paymentMethodAdapter);
         rcvPaymentMethods.setHasFixedSize(true);
+        rcvPaymentMethods.addItemDecoration(new DividerItemDecoration(rcvPaymentMethods.getContext(), DividerItemDecoration.VERTICAL));
     }
 
     private void whereToPay(int typeItem) {
-        switch (typeItem){
+        switch (typeItem) {
             case PAGO_EFECTIVO_MOVIL:
             case PAGO_EFECTIVO_AGENTES:
                 Intent intent = new Intent(this, WhereToPayActivity.class);
                 intent.putExtra(getString(R.string.serialize_cip), cip);
-                intent.putExtra(getString(R.string.type_method_payment),typeItem);
+                intent.putExtra(getString(R.string.type_method_payment), typeItem);
                 startActivity(intent);
                 break;
             default:
