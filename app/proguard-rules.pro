@@ -25,6 +25,5 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class pe.kdsep.** { *; }
-
 -dontwarn javax.annotation.**
 -dontwarn org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement

@@ -48,5 +48,20 @@
     <string name="serialize_cip">serialize_cip</string>
     <string name="type_payment">type_payment</string>
     <string name="payment_method_not_available">No disponible este método de pago</string>
+    <string name="type_method_payment">typePayment</string>
+    <string name="title_movil">Móvil</string>
+    <string name="title_agents">Agentes</string>
+    <string name="cip_subtitle">CIP :</string>
+    <string name="amount_subtitle">Monto</string>
+    <string name="date_expiry_subtitle">Fecha de vencimiento</string>
+    <string name="agent_bcp">BCP</string>
+    <string name="agent_banbif">BANBIF</string>
+    <string name="agent_bbva">BBVA</string>
+    <string name="agent_scotiabank">SCOTIABANK</string>
+    <string name="agent_ibk">IBK</string>
+    <string name="agent_casnet">AGENTE CASNET</string>
+    <string name="agent_wester">WESTERN UNION</string>
+    <string name="agent_full_charge">FULL CARGA</string>
 
+    <string name="currency_soles">S/. %1$f</string>
 </resources>
