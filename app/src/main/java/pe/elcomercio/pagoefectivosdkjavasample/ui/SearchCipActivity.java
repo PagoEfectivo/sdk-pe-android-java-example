@@ -1,5 +1,6 @@
 package pe.elcomercio.pagoefectivosdkjavasample.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
@@ -55,7 +56,9 @@ public class SearchCipActivity extends AppCompatActivity implements SearchListen
 
         for (int i = 0; i < cipList.size(); i++) {
             EditText nameEditText = rcvSearch.getChildAt(i).findViewById(R.id.txtSearchCip);
-            cipListToSearch.add(Integer.parseInt(nameEditText.getText().toString()));
+            if (!nameEditText.getText().toString().isEmpty()) {
+                cipListToSearch.add(Integer.parseInt(nameEditText.getText().toString()));
+            }
         }
 
         instance.searchCip(cipListToSearch, this);
@@ -68,18 +71,14 @@ public class SearchCipActivity extends AppCompatActivity implements SearchListen
 
     @Override
     public void OnSearchSuccessful(List<CipSearch> list) {
-        StringBuilder listCipsSearched = new StringBuilder();
-        for (CipSearch cipSearch : list) {
 
-            listCipsSearched.append("\n\n");
-            listCipsSearched.append(" - CIP: ").append(cipSearch.getCip()).append("\n");
-            listCipsSearched.append(" - AMOUNT: ").append(cipSearch.getAmount()).append("\n");
-            listCipsSearched.append(" - CURRENCY: ").append(cipSearch.getCurrency()).append("\n");
-            listCipsSearched.append(" - DATEXPIRY: ").append(cipSearch.getDateExpiry()).append("\n");
-            listCipsSearched.append(" - TRANSACTIONCODE: ").append(cipSearch.getTransactionCode()).append("\n");
+        Intent intent = new Intent(this, ResultSearchCipActivity.class);
+        intent.putExtra(getString(R.string.result_cip_list), (ArrayList<CipSearch>) list);
+        startActivity(intent);
+
+        if (toastDialog != null) {
+            toastDialog.cancel();
         }
-
-        showMessage(listCipsSearched.toString());
     }
 
     @Override

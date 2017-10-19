@@ -32,6 +32,7 @@
         <activity
             android:name=".ui.PaymentDetailActivity"
             android:label="@string/summary_payment_name" />
+        <activity android:name=".ui.ResultSearchCipActivity" />
     </application>
 
 </manifest>
