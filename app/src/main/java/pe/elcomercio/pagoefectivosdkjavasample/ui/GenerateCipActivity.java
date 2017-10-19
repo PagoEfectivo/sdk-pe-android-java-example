@@ -9,7 +9,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import pe.elcomercio.pagoefectivosdk.PagoEfectivoSdk;
@@ -139,7 +142,20 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
             cipRequest.setAmount(Double.parseDouble(txtAmount.getText().toString()));
         }
         cipRequest.setTransactionCode(txtTransactionCode.getText().toString());
-        //cipRequest.setDateExpiry(txtDateExpiry.getText().toString());
+
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.YEAR, 2017);
+        calendar.set(Calendar.MONTH, Calendar.OCTOBER);
+        calendar.set(Calendar.DATE, 20);
+
+        calendar.set(Calendar.HOUR_OF_DAY, 20);
+        calendar.set(Calendar.MINUTE, 14);
+        calendar.set(Calendar.SECOND, 0);
+
+        Date date = calendar.getTime();
+
+        cipRequest.setDateExpiry(date);
+
         cipRequest.setAdditionalData(txtAdditionalData.getText().toString());
         cipRequest.setPaymentConcept(txtPaymentConcept.getText().toString());
         cipRequest.setUserEmail(txtUserEmail.getText().toString());
@@ -151,7 +167,9 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         cipRequest.setUserDocumentNumber(txtUserDocumentNumber.getText().toString());
         cipRequest.setUserPhone(txtUserPhone.getText().toString());
         cipRequest.setUserCodeCountry(txtUserCodeCountry.getText().toString());
-        cipRequest.setAdminEmail(txtAdminEmail.getText().toString());
+        if (!txtAdminEmail.getText().toString().isEmpty()) {
+            cipRequest.setAdminEmail(txtAdminEmail.getText().toString());
+        }
 
         return cipRequest;
     }

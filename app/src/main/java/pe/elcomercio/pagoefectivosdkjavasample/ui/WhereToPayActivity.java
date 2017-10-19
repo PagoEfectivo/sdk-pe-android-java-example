@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,7 +53,13 @@ public class WhereToPayActivity extends AppCompatActivity {
         whereToPayAdapter.setOnItemClickListener(new WhereToPayAdapter.OnItemClickListener() {
             @Override
             public void onItemClickAgentMobil(int position) {
-                Toast.makeText(WhereToPayActivity.this, "CIP" + cip.getDateExpiry(), Toast.LENGTH_SHORT).show();
+
+                String agentName = (String) listMethodPaymentsAndCip.get(position);
+
+                Intent intent = new Intent(WhereToPayActivity.this, PaymentDetailActivity.class);
+                intent.putExtra(getString(R.string.serialize_cip), cip);
+                intent.putExtra(getString(R.string.agent_payment), agentName);
+                startActivity(intent);
             }
         });
 

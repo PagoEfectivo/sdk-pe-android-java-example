@@ -52,7 +52,7 @@ public class WhereToPayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         if (holder.getItemViewType() == TYPE_CIP) {
             CipViewHolder cipHolder = (CipViewHolder) holder;
             Cip cip = (Cip) itemList.get(position);
-            String amountWithPEN = String.format(context.getString(R.string.currency_soles), cip.getAmount());
+            String amountWithPEN = String.format(context.getString(R.string.currency_soles), String.valueOf(cip.getAmount()));
 
             cipHolder.lblCip.setText(String.valueOf(cip.getCip()));
             cipHolder.lblAmount.setText(amountWithPEN);
