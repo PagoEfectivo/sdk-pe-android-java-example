@@ -72,5 +72,16 @@
     <string name="step_two_for_payment">2. Indícale que harás un pago a Pago Efectivo - Código: 02186</string>
     <string name="step_three_for_payment">3. Díctale al cajero este código CIP: %1$s</string>
     <string name="agent_payment">agentPayment</string>
+    <string name="result_cip_list">resultCipList</string>
+    <string name="transaction_code_subtitle">Transaction Code : </string>
+    <string name="currency_subtitle">Currency : </string>
+    <string name="status_subtitle">Status : </string>
+    <string name="status_name_subtitle">Status Name : </string>
+    <string name="date_creation_subtitle">Date Creation :</string>
+    <string name="date_payment_subtitle">Date Payment :</string>
+    <string name="date_removal_subtitle">Date removal</string>
+    <string name="cip_subtitle2">Cip :</string>
+    <string name="amount_subtitle2">Amount :</string>
+    <string name="date_expiry_subtitle2">Date Expiry :</string>
 
 </resources>
