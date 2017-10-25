@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">PagoEfectivoSDKJavaSample</string>
     <string name="action_settings">Settings</string>
-    <string name="main_title">Bienvenido a Pago Efectivo SDK</string>
+    <string name="main_title">Bienvenido a PagoEfectivo SDK</string>
     <string name="generate_cip_button">Generar Cip</string>
     <string name="list_cip_button">Buscar Cips</string>
     <string name="currency">currency</string>
@@ -39,8 +39,8 @@
     <string name="add_row">Agregar una fila</string>
     <string name="searching_cip">Buscando CIPs</string>
     <string name="method_payment_name">Métodos de Pago</string>
-    <string name="pe_mobile_internet">Pago Efectivo Móvil y/o Internet</string>
-    <string name="pe_agents_agency">Pago Efectivo Agentes y Agencias</string>
+    <string name="pe_mobile_internet">PagoEfectivo Móvil y/o Internet</string>
+    <string name="pe_agents_agency">PagoEfectivo Agentes y Agencias</string>
     <string name="pe_visa">Visa</string>
     <string name="pe_master_card">Master Card</string>
     <string name="pe_american_express">American Express</string>
@@ -59,7 +59,7 @@
     <string name="agent_bbva">BBVA</string>
     <string name="agent_scotiabank">SCOTIABANK</string>
     <string name="agent_ibk">IBK</string>
-    <string name="agent_casnet">AGENTE CASNET</string>
+    <string name="agent_casnet">AGENTE KASNET</string>
     <string name="agent_wester">WESTERN UNION</string>
     <string name="agent_full_charge">FULL CARGA</string>
 
@@ -69,7 +69,7 @@
 
     <string name="title_summary_payment">Paga S/. %1$s en %2$s para reservar tu compra</string>
     <string name="step_one_for_payment">1. Ve a tu agente %1$s más cercano</string>
-    <string name="step_two_for_payment">2. Indícale que harás un pago a Pago Efectivo - Código: 02186</string>
+    <string name="step_two_for_payment">2. Indícale que harás un pago a PagoEfectivo - Código: 02186</string>
     <string name="step_three_for_payment">3. Díctale al cajero este código CIP: %1$s</string>
     <string name="agent_payment">agentPayment</string>
     <string name="result_cip_list">resultCipList</string>
@@ -84,4 +84,9 @@
     <string name="amount_subtitle2">Amount :</string>
     <string name="date_expiry_subtitle2">Date Expiry :</string>
 
+
+    <string name="cancel">Cancel</string>
+    <string name="dateformat_with_values">%1$s/%2$s/%3$s</string>
+
+    <string name="timeformat_with_values">%1$s:%2$s %3$s</string>
 </resources>
