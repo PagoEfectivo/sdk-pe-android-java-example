@@ -59,7 +59,7 @@
     <string name="agent_bbva">BBVA</string>
     <string name="agent_scotiabank">SCOTIABANK</string>
     <string name="agent_ibk">IBK</string>
-    <string name="agent_casnet">AGENTE KASNET</string>
+    <string name="agent_kasnet">AGENTE KASNET</string>
     <string name="agent_wester">WESTERN UNION</string>
     <string name="agent_full_charge">FULL CARGA</string>
 
@@ -79,7 +79,7 @@
     <string name="status_name_subtitle">Status Name : </string>
     <string name="date_creation_subtitle">Date Creation :</string>
     <string name="date_payment_subtitle">Date Payment :</string>
-    <string name="date_removal_subtitle">Date removal</string>
+    <string name="date_removal_subtitle">Date Removal</string>
     <string name="cip_subtitle2">Cip :</string>
     <string name="amount_subtitle2">Amount :</string>
     <string name="date_expiry_subtitle2">Date Expiry :</string>
@@ -89,4 +89,5 @@
     <string name="dateformat_with_values">%1$s/%2$s/%3$s</string>
 
     <string name="timeformat_with_values">%1$s:%2$s %3$s</string>
+    <string name="new_cip">New Cip</string>
 </resources>

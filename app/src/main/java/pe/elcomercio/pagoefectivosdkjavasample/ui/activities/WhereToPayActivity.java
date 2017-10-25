@@ -81,7 +81,7 @@ public class WhereToPayActivity extends AppCompatActivity {
         listMethodPaymentsAndCip.add(getString(R.string.agent_ibk));
 
         if (typePayment == PAGO_EFECTIVO_AGENTES) {
-            listMethodPaymentsAndCip.add(getString(R.string.agent_casnet));
+            listMethodPaymentsAndCip.add(getString(R.string.agent_kasnet));
             listMethodPaymentsAndCip.add(getString(R.string.agent_wester));
             listMethodPaymentsAndCip.add(getString(R.string.agent_full_charge));
         }

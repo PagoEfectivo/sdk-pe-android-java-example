@@ -2,10 +2,12 @@ package pe.elcomercio.pagoefectivosdkjavasample.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.RecyclerView;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,58 +18,64 @@ import pe.elcomercio.pagoefectivosdk.cip.SearchListener;
 import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipError;
 import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipSearch;
 import pe.elcomercio.pagoefectivosdkjavasample.R;
-import pe.elcomercio.pagoefectivosdkjavasample.adapter.SearchAdapter;
-import pe.elcomercio.pagoefectivosdkjavasample.ui.activities.ResultSearchCipActivity;
 
 public class SearchCipActivity extends AppCompatActivity implements SearchListener {
 
-    private PagoEfectivoSdk instance;
-
-    private RecyclerView rcvSearch;
-    private SearchAdapter searchAdapter;
-    private List<Integer> cipList = new ArrayList<>();
+    private PagoEfectivoSdk pagoEfectivoSdk;
 
     private Toast toastDialog;
+    private LinearLayout lnlCip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_cip);
+
         init();
     }
 
     private void init() {
-        //Init UI
-        cipList.add((int) System.currentTimeMillis());
-
-        //Setup Recycler
-        searchAdapter = new SearchAdapter(cipList);
-        rcvSearch = (RecyclerView) findViewById(R.id.rcvSearch);
-        rcvSearch.setAdapter(searchAdapter);
-        rcvSearch.setHasFixedSize(true);
-
+        //init UI
+        lnlCip = (LinearLayout) findViewById(R.id.lnlCip);
         //Get Instance from PagoEfectivo SDK
-        instance = PagoEfectivoSdk.getInstance();
+        pagoEfectivoSdk = PagoEfectivoSdk.getInstance();
+    }
+
+    private void addNewChildViews() {
+        int MAX_NUMBER_OF_VIEWS = 5;
+        if (lnlCip.getChildCount() < MAX_NUMBER_OF_VIEWS) {
+            TextInputLayout textInputLayout = new TextInputLayout(this);
+            EditText editText = new EditText(this);
+            editText.setHint(getString(R.string.new_cip));
+            editText.setTag(lnlCip.getChildCount());
+            editText.setInputType(InputType.TYPE_CLASS_NUMBER);
+            textInputLayout.addView(editText);
+            lnlCip.addView(textInputLayout);
+        }
+    }
+
+    private List<Integer> getEditTextValues() {
+        List<Integer> cipList = new ArrayList<>();
+        for (int i = 0; i < lnlCip.getChildCount(); i++) {
+            TextInputLayout textInputLayout = (TextInputLayout) lnlCip.getChildAt(i);
+
+            EditText editText = textInputLayout.findViewWithTag(i);
+            if (editText.getText().toString().isEmpty()) {
+                cipList.add(0);
+            } else {
+                cipList.add(Integer.parseInt(editText.getText().toString()));
+            }
+        }
+        return cipList;
     }
 
     public void searchCipSdkOnClick(View view) {
         showMessage(getString(R.string.searching_cip));
-
-        List<Integer> cipListToSearch = new ArrayList<>();
-
-        for (int i = 0; i < cipList.size(); i++) {
-            EditText nameEditText = rcvSearch.getChildAt(i).findViewById(R.id.txtSearchCip);
-            if (!nameEditText.getText().toString().isEmpty()) {
-                cipListToSearch.add(Integer.parseInt(nameEditText.getText().toString()));
-            }
-        }
-
-        instance.searchCip(cipListToSearch, this);
+        pagoEfectivoSdk.searchCip(getEditTextValues(), this);
     }
 
     public void addCipRow(View view) {
-        cipList.add((int) System.currentTimeMillis());
-        searchAdapter.notifyDataSetChanged();
+        addNewChildViews();
     }
 
     @Override
