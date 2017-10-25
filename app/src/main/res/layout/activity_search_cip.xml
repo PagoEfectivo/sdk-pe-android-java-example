@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/lnlGeneral"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="pe.elcomercio.pagoefectivosdkjavasample.ui.SearchCipActivity">
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rcvSearch"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+    tools:context="pe.elcomercio.pagoefectivosdkjavasample.ui.activities.SearchCipActivity">
 
     <android.support.v7.widget.ButtonBarLayout
         android:layout_width="match_parent"
@@ -32,5 +26,15 @@
             android:onClick="searchCipSdkOnClick"
             android:text="@string/search_cips" />
     </android.support.v7.widget.ButtonBarLayout>
+
+    <LinearLayout
+        android:id="@+id/lnlCip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:orientation="vertical"/>
 
 </LinearLayout>
