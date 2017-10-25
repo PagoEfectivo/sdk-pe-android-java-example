@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.ui;
+package pe.elcomercio.pagoefectivosdkjavasample.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import pe.elcomercio.pagoefectivosdk.cip.usermodel.Cip;
 import pe.elcomercio.pagoefectivosdkjavasample.R;
-import pe.elcomercio.pagoefectivosdkjavasample.data.WhereToPayAdapter;
+import pe.elcomercio.pagoefectivosdkjavasample.adapter.WhereToPayAdapter;
 
 import static pe.elcomercio.pagoefectivosdkjavasample.util.Constant.PAGO_EFECTIVO_AGENTES;
 

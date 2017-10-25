@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.data;
+package pe.elcomercio.pagoefectivosdkjavasample.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

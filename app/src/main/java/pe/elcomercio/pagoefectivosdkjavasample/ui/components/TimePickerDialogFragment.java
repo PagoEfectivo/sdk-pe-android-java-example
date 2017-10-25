@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.ui;
+package pe.elcomercio.pagoefectivosdkjavasample.ui.components;
 
 import android.app.Activity;
 import android.app.TimePickerDialog;

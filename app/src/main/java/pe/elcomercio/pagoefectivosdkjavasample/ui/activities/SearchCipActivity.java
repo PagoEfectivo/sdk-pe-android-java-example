@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.ui;
+package pe.elcomercio.pagoefectivosdkjavasample.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +16,8 @@ import pe.elcomercio.pagoefectivosdk.cip.SearchListener;
 import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipError;
 import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipSearch;
 import pe.elcomercio.pagoefectivosdkjavasample.R;
-import pe.elcomercio.pagoefectivosdkjavasample.data.SearchAdapter;
+import pe.elcomercio.pagoefectivosdkjavasample.adapter.SearchAdapter;
+import pe.elcomercio.pagoefectivosdkjavasample.ui.activities.ResultSearchCipActivity;
 
 public class SearchCipActivity extends AppCompatActivity implements SearchListener {
 

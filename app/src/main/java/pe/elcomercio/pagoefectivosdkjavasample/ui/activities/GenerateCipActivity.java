@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.ui;
+package pe.elcomercio.pagoefectivosdkjavasample.ui.activities;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -27,6 +27,8 @@ import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipRequest;
 import pe.elcomercio.pagoefectivosdk.util.Currency;
 import pe.elcomercio.pagoefectivosdk.util.DocumentType;
 import pe.elcomercio.pagoefectivosdkjavasample.R;
+import pe.elcomercio.pagoefectivosdkjavasample.ui.components.DatePickerDialogFragment;
+import pe.elcomercio.pagoefectivosdkjavasample.ui.components.TimePickerDialogFragment;
 import pe.elcomercio.pagoefectivosdkjavasample.util.Utils;
 
 public class GenerateCipActivity extends AppCompatActivity implements CipListener,

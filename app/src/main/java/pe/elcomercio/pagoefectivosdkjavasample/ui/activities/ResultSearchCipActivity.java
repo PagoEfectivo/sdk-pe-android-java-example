@@ -1,4 +1,4 @@
-package pe.elcomercio.pagoefectivosdkjavasample.ui;
+package pe.elcomercio.pagoefectivosdkjavasample.ui.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import java.util.List;
 
 import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipSearch;
 import pe.elcomercio.pagoefectivosdkjavasample.R;
-import pe.elcomercio.pagoefectivosdkjavasample.data.ResultSearchAdapter;
+import pe.elcomercio.pagoefectivosdkjavasample.adapter.ResultSearchAdapter;
 
 public class ResultSearchCipActivity extends AppCompatActivity {
 
