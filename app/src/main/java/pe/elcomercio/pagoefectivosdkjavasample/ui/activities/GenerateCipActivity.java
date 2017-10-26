@@ -69,7 +69,6 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
     private List<String> currencyNameList = new ArrayList<>();
     private List<String> documentTypeNameList = new ArrayList<>();
 
-
     private List<Currency> currencyValueList = new ArrayList<>();
     private List<DocumentType> documentTypeValueList = new ArrayList<>();
 
@@ -251,7 +250,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
 
     public void showTimePickerDialog(View view) {
         DialogFragment timePickerDialogFragment = TimePickerDialogFragment.newInstance();
-        timePickerDialogFragment.show(getSupportFragmentManager(), "date_picker_dialog_fragment");
+        timePickerDialogFragment.show(getSupportFragmentManager(), "time_picker_dialog_fragment");
     }
 
     @Override

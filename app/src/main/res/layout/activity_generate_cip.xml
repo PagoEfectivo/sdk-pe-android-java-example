@@ -77,7 +77,7 @@
                     android:drawableEnd="@drawable/ic_arrow_drop_down_grey_700_24dp"
                     android:gravity="center_vertical"
                     android:onClick="showDatePickerDialog"
-                    android:textSize="17sp" />
+                    android:textSize="17sp" android:focusable="true"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -104,7 +104,7 @@
                     android:drawableEnd="@drawable/ic_arrow_drop_down_grey_700_24dp"
                     android:gravity="center_vertical"
                     android:onClick="showTimePickerDialog"
-                    android:textSize="17sp" />
+                    android:textSize="17sp" android:focusable="true"/>
 
                 <View
                     android:layout_width="match_parent"
@@ -132,8 +132,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="@string/transaction_code"
-                    android:textSize="45sp"
-                    android:maxLines="1" />
+                    android:maxLines="1"
+                    android:textSize="35sp" />
             </android.support.design.widget.TextInputLayout>
 
         </LinearLayout>

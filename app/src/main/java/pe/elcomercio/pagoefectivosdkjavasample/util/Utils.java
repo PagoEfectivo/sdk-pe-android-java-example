@@ -6,9 +6,10 @@ package pe.elcomercio.pagoefectivosdkjavasample.util;
 
 public class Utils {
     public static String addZeroToNumber(String str){
+        String newStr = str;
         if(str.length()==1){
-            str = "0" + str;
+            newStr = "0" + str;
         }
-        return str;
+        return newStr;
     }
 }

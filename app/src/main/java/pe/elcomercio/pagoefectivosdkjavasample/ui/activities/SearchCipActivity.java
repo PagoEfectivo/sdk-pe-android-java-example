@@ -80,11 +80,9 @@ public class SearchCipActivity extends AppCompatActivity implements SearchListen
 
     @Override
     public void OnSearchSuccessful(List<CipSearch> list) {
-
         Intent intent = new Intent(this, ResultSearchCipActivity.class);
         intent.putExtra(getString(R.string.result_cip_list), (ArrayList<CipSearch>) list);
         startActivity(intent);
-
         if (toastDialog != null) {
             toastDialog.cancel();
         }
@@ -96,7 +94,6 @@ public class SearchCipActivity extends AppCompatActivity implements SearchListen
         for (CipError error : list) {
             errorMessage.append("- (").append(error.getCode()).append(")").append(" | ").append(error.getField()).append(" --> ").append(error.getMessage()).append("\n");
         }
-
         showMessage(errorMessage.toString());
     }
 
