@@ -33,6 +33,7 @@
 
     <string name="currency_pen">Soles</string>
     <string name="currency_usd">Dólares</string>
+    <string name="generate_cip">Generar CIP</string>
     <string name="generating_cip">Generando CIP</string>
     <string name="cip_generated">Cip Generado</string>
     <string name="search_cips">Buscar CIPs</string>
@@ -84,8 +85,6 @@
     <string name="amount_subtitle2">Amount :</string>
     <string name="date_expiry_subtitle2">Date Expiry :</string>
 
-
-    <string name="cancel">Cancel</string>
     <string name="dateformat_with_values">%1$s/%2$s/%3$s</string>
 
     <string name="timeformat_with_values">%1$s:%2$s %3$s</string>
