@@ -16,13 +16,14 @@ import pe.elcomercio.pagoefectivosdkjavasample.R;
  * Created by tohure on 18/10/17.
  */
 
+@SuppressWarnings("ALL")
 public class WhereToPayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE_CIP = 0;
     private static final int TYPE_WHERE_PAY = 1;
 
-    private Context context;
-    private List<Object> itemList;
+    private final Context context;
+    private final List<Object> itemList;
 
     //Listener for onClick adapter
     private OnItemClickListener listener;
@@ -80,7 +81,7 @@ public class WhereToPayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     private class WherePayViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        private TextView lblWherePay;
+        private final TextView lblWherePay;
 
         WherePayViewHolder(View view) {
             super(view);
@@ -97,9 +98,9 @@ public class WhereToPayAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
     }
 
     private class CipViewHolder extends RecyclerView.ViewHolder {
-        private TextView lblCip;
-        private TextView lblAmount;
-        private TextView lblDateExpire;
+        private final TextView lblCip;
+        private final TextView lblAmount;
+        private final TextView lblDateExpire;
 
         CipViewHolder(View view) {
             super(view);

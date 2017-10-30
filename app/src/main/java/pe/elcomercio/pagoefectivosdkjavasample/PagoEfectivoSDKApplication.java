@@ -8,6 +8,7 @@ import pe.elcomercio.pagoefectivosdk.PagoEfectivoSdk;
  * Created by Tohure and CarlitosDroid on 16/10/17.
  */
 
+@SuppressWarnings({"ALL", "DefaultFileTemplate"})
 public class PagoEfectivoSDKApplication extends Application {
 
     @Override

@@ -4,6 +4,7 @@ package pe.elcomercio.pagoefectivosdkjavasample.util;
  * Created by tohure on 17/10/17.
  */
 
+@SuppressWarnings("ALL")
 public class Constant {
 
     public static final int PAGO_EFECTIVO_MOVIL = 0;

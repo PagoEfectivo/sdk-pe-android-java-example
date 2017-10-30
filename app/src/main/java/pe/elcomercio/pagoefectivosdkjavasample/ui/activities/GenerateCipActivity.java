@@ -57,7 +57,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
 
     private Toast toastDialog;
 
-    final Calendar calendar = Calendar.getInstance();
+    private final Calendar calendar = Calendar.getInstance();
 
     private int year = calendar.get(Calendar.YEAR);
     private int month = calendar.get(Calendar.MONTH);
@@ -66,11 +66,11 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
     private int hourOfDay = calendar.get(Calendar.HOUR);
     private int minute = calendar.get(Calendar.MINUTE);
 
-    private List<String> currencyNameList = new ArrayList<>();
-    private List<String> documentTypeNameList = new ArrayList<>();
+    private final List<String> currencyNameList = new ArrayList<>();
+    private final List<String> documentTypeNameList = new ArrayList<>();
 
-    private List<Currency> currencyValueList = new ArrayList<>();
-    private List<DocumentType> documentTypeValueList = new ArrayList<>();
+    private final List<Currency> currencyValueList = new ArrayList<>();
+    private final List<DocumentType> documentTypeValueList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,23 +89,23 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         instance = PagoEfectivoSdk.getInstance();
 
         //Setting Up Views
-        spiCurrency = (Spinner) findViewById(R.id.spiCurrency);
-        spiUserDocumentType = (Spinner) findViewById(R.id.spiUserDocumentType);
-        txtAmount = (EditText) findViewById(R.id.txtAmount);
-        txtTransactionCode = (EditText) findViewById(R.id.txtTransactionCode);
-        lblDateExpiry = (TextView) findViewById(R.id.lblDateExpiry);
-        lblTimeExpiry = (TextView) findViewById(R.id.lblTimeExpiry);
-        txtAdditionalData = (EditText) findViewById(R.id.txtAdditionalData);
-        txtPaymentConcept = (EditText) findViewById(R.id.txtPaymentConcept);
-        txtUserEmail = (EditText) findViewById(R.id.txtUserEmail);
-        txtUserName = (EditText) findViewById(R.id.txtUserName);
-        txtUserLastName = (EditText) findViewById(R.id.txtUserLastName);
-        txtUserUbigeo = (EditText) findViewById(R.id.txtUserUbigeo);
-        txtUserCountry = (EditText) findViewById(R.id.txtUserCountry);
-        txtUserDocumentNumber = (EditText) findViewById(R.id.txtUserDocumentNumber);
-        txtUserPhone = (EditText) findViewById(R.id.txtUserPhone);
-        txtUserCodeCountry = (EditText) findViewById(R.id.txtUserCodeCountry);
-        txtAdminEmail = (EditText) findViewById(R.id.txtAdminEmail);
+        spiCurrency = findViewById(R.id.spiCurrency);
+        spiUserDocumentType = findViewById(R.id.spiUserDocumentType);
+        txtAmount = findViewById(R.id.txtAmount);
+        txtTransactionCode = findViewById(R.id.txtTransactionCode);
+        lblDateExpiry = findViewById(R.id.lblDateExpiry);
+        lblTimeExpiry = findViewById(R.id.lblTimeExpiry);
+        txtAdditionalData = findViewById(R.id.txtAdditionalData);
+        txtPaymentConcept = findViewById(R.id.txtPaymentConcept);
+        txtUserEmail = findViewById(R.id.txtUserEmail);
+        txtUserName = findViewById(R.id.txtUserName);
+        txtUserLastName = findViewById(R.id.txtUserLastName);
+        txtUserUbigeo = findViewById(R.id.txtUserUbigeo);
+        txtUserCountry = findViewById(R.id.txtUserCountry);
+        txtUserDocumentNumber = findViewById(R.id.txtUserDocumentNumber);
+        txtUserPhone = findViewById(R.id.txtUserPhone);
+        txtUserCodeCountry = findViewById(R.id.txtUserCodeCountry);
+        txtAdminEmail = findViewById(R.id.txtAdminEmail);
 
         //Setting Up currency adapter
         ArrayAdapter<String> currencyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, currencyNameList);

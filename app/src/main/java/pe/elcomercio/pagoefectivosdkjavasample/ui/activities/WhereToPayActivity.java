@@ -19,8 +19,8 @@ public class WhereToPayActivity extends AppCompatActivity {
 
     private Cip cip;
     private int typePayment;
-    private List<String> typePaymentMethods = new ArrayList<>();
-    private List<Object> listMethodPaymentsAndCip = new ArrayList<>();
+    private final List<String> typePaymentMethods = new ArrayList<>();
+    private final List<Object> listMethodPaymentsAndCip = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class WhereToPayActivity extends AppCompatActivity {
         });
 
         //Setup Recycler
-        RecyclerView rcvWhereToPay = (RecyclerView) findViewById(R.id.rcvWhereToPay);
+        RecyclerView rcvWhereToPay = findViewById(R.id.rcvWhereToPay);
         rcvWhereToPay.setAdapter(whereToPayAdapter);
         rcvWhereToPay.setHasFixedSize(true);
         rcvWhereToPay.addItemDecoration(new DividerItemDecoration(rcvWhereToPay.getContext(), DividerItemDecoration.VERTICAL));

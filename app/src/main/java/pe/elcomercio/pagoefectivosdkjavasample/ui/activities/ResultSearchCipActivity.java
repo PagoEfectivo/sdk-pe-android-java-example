@@ -12,6 +12,7 @@ import pe.elcomercio.pagoefectivosdk.cip.usermodel.CipSearch;
 import pe.elcomercio.pagoefectivosdkjavasample.R;
 import pe.elcomercio.pagoefectivosdkjavasample.adapter.ResultSearchAdapter;
 
+@SuppressWarnings("unchecked")
 public class ResultSearchCipActivity extends AppCompatActivity {
 
     private List<CipSearch> searchList;
@@ -33,7 +34,7 @@ public class ResultSearchCipActivity extends AppCompatActivity {
             ResultSearchAdapter resultSearchAdapter = new ResultSearchAdapter(searchList);
 
             //Setup Recycler
-            RecyclerView rcvResultSearchCip = (RecyclerView) findViewById(R.id.rcvResultSearchCip);
+            RecyclerView rcvResultSearchCip = findViewById(R.id.rcvResultSearchCip);
             rcvResultSearchCip.setAdapter(resultSearchAdapter);
             rcvResultSearchCip.setHasFixedSize(true);
         }

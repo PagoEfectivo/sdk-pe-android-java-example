@@ -1,8 +1,7 @@
 package pe.elcomercio.pagoefectivosdkjavasample.ui.components;
 
-import android.app.Activity;
 import android.app.TimePickerDialog;
-import android.app.TimePickerDialog.OnTimeSetListener;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -20,22 +19,25 @@ import pe.elcomercio.pagoefectivosdkjavasample.R;
  * Created by carlosleonardocamilovargashuaman on 10/25/17.
  */
 
+@SuppressWarnings("ALL")
 public class TimePickerDialogFragment extends DialogFragment implements View.OnClickListener {
 
     private TimePickerDialog.OnTimeSetListener mListener;
 
     private TimePicker timePicker;
-    AppCompatButton btnCancel;
-    AppCompatButton btnOk;
+    private AppCompatButton btnCancel;
+    private AppCompatButton btnOk;
 
     public static TimePickerDialogFragment newInstance() {
         return new TimePickerDialogFragment();
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.mListener = (OnTimeSetListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context != null) {
+            this.mListener = (TimePickerDialog.OnTimeSetListener) context;
+        }
     }
 
     @Override
@@ -50,6 +52,7 @@ public class TimePickerDialogFragment extends DialogFragment implements View.OnC
         return inflater.inflate(R.layout.fragment_dialog_time_picker, container, false);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 

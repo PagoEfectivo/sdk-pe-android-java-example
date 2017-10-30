@@ -30,9 +30,9 @@ public class PaymentDetailActivity extends AppCompatActivity {
         }
 
         //Init UI
-        TextView lblTitleSummaryDetail = (TextView) findViewById(R.id.lblTitleSummary);
-        TextView lblNearAgent = (TextView) findViewById(R.id.lblNearAgent);
-        TextView lblCipCode = (TextView) findViewById(R.id.lblCipCode);
+        TextView lblTitleSummaryDetail = findViewById(R.id.lblTitleSummary);
+        TextView lblNearAgent = findViewById(R.id.lblNearAgent);
+        TextView lblCipCode = findViewById(R.id.lblCipCode);
 
         String titleSummary = String.format(getString(R.string.title_summary_payment), String.valueOf(cip.getAmount()), agentName);
         String stepOneSummary = String.format(getString(R.string.step_one_for_payment), agentName);

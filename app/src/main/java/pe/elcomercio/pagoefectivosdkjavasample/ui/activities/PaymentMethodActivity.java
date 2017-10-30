@@ -21,7 +21,7 @@ import static pe.elcomercio.pagoefectivosdkjavasample.util.Constant.PAGO_OTROS;
 
 public class PaymentMethodActivity extends AppCompatActivity {
 
-    private List<PaymentMethodEntity> paymentMethodList = new ArrayList<>();
+    private final List<PaymentMethodEntity> paymentMethodList = new ArrayList<>();
     private Cip cip;
 
     @Override
@@ -55,7 +55,7 @@ public class PaymentMethodActivity extends AppCompatActivity {
         });
 
         //Setup Recycler
-        RecyclerView rcvPaymentMethods = (RecyclerView) findViewById(R.id.rcvPaymentMethods);
+        RecyclerView rcvPaymentMethods = findViewById(R.id.rcvPaymentMethods);
         rcvPaymentMethods.setAdapter(paymentMethodAdapter);
         rcvPaymentMethods.setHasFixedSize(true);
         rcvPaymentMethods.addItemDecoration(new DividerItemDecoration(rcvPaymentMethods.getContext(), DividerItemDecoration.VERTICAL));
