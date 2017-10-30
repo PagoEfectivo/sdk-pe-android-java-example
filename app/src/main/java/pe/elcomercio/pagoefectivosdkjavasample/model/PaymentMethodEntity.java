@@ -4,6 +4,7 @@ package pe.elcomercio.pagoefectivosdkjavasample.model;
  * Created by tohure on 17/10/17.
  */
 
+@SuppressWarnings({"ALL", "DefaultFileTemplate"})
 public class PaymentMethodEntity {
 
     private int type;

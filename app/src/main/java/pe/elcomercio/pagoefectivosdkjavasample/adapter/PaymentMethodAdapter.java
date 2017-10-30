@@ -15,9 +15,10 @@ import pe.elcomercio.pagoefectivosdkjavasample.model.PaymentMethodEntity;
  * Created by tohure on 17/10/17.
  */
 
+@SuppressWarnings("ALL")
 public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdapter.PaymentItemViewHolder> {
 
-    private List<PaymentMethodEntity> paymentMethodList;
+    private final List<PaymentMethodEntity> paymentMethodList;
 
     //Listener for onClick adapter
     private PaymentMethodAdapter.OnItemClickListener listener;
@@ -46,7 +47,7 @@ public class PaymentMethodAdapter extends RecyclerView.Adapter<PaymentMethodAdap
 
     class PaymentItemViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView lblPaymentMethod;
+        final TextView lblPaymentMethod;
 
         PaymentItemViewHolder(View itemView) {
             super(itemView);

@@ -16,13 +16,7 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url "http://localhost:8081/artifactory/libs-release-local"
-            credentials {
-                username = 'mobile'
-                password = 'AP5mhZs8bSwp7DYE'
-            }
-        }
+        google()
     }
 }
 

@@ -36,7 +36,7 @@ public class SearchCipActivity extends AppCompatActivity implements SearchListen
 
     private void init() {
         //init UI
-        lnlCip = (LinearLayout) findViewById(R.id.lnlCip);
+        lnlCip = findViewById(R.id.lnlCip);
         //Get Instance from PagoEfectivo SDK
         pagoEfectivoSdk = PagoEfectivoSdk.getInstance();
     }

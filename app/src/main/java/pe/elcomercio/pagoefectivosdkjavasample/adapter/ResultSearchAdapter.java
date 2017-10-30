@@ -15,9 +15,10 @@ import pe.elcomercio.pagoefectivosdkjavasample.R;
  * Created by tohure on 19/10/17.
  */
 
+@SuppressWarnings("ALL")
 public class ResultSearchAdapter extends RecyclerView.Adapter<ResultSearchAdapter.ResultSearchItemViewHolder> {
 
-    private List<CipSearch> cipSearches;
+    private final List<CipSearch> cipSearches;
 
     public ResultSearchAdapter(List<CipSearch> cipSearches) {
         this.cipSearches = cipSearches;
@@ -50,16 +51,16 @@ public class ResultSearchAdapter extends RecyclerView.Adapter<ResultSearchAdapte
 
     class ResultSearchItemViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView lblCipSearch;
-        private TextView lblTransactionCode;
-        private TextView lblAmount;
-        private TextView lblCurrency;
-        private TextView lblStatus;
-        private TextView lblStatusName;
-        private TextView lblDateCreation;
-        private TextView lblDateExpire;
-        private TextView lblDatePayment;
-        private TextView lblDateRemoval;
+        private final TextView lblCipSearch;
+        private final TextView lblTransactionCode;
+        private final TextView lblAmount;
+        private final TextView lblCurrency;
+        private final TextView lblStatus;
+        private final TextView lblStatusName;
+        private final TextView lblDateCreation;
+        private final TextView lblDateExpire;
+        private final TextView lblDatePayment;
+        private final TextView lblDateRemoval;
 
         ResultSearchItemViewHolder(View itemView) {
             super(itemView);
