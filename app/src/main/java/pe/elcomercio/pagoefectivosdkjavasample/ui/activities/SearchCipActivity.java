@@ -51,6 +51,8 @@ public class SearchCipActivity extends AppCompatActivity implements SearchListen
             editText.setInputType(InputType.TYPE_CLASS_NUMBER);
             textInputLayout.addView(editText);
             lnlCip.addView(textInputLayout);
+        } else {
+            Toast.makeText(this, R.string.limit_search_alert, Toast.LENGTH_SHORT).show();
         }
     }
 
