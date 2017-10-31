@@ -41,8 +41,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
     private Spinner spiUserDocumentType;
     private EditText txtAmount;
     private EditText txtTransactionCode;
-    private TextView lblDateExpiry;
-    private TextView lblTimeExpiry;
+    private TextView lblDateTimeExpiry;
     private EditText txtAdditionalData;
     private EditText txtPaymentConcept;
     private EditText txtUserEmail;
@@ -93,8 +92,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         spiUserDocumentType = findViewById(R.id.spiUserDocumentType);
         txtAmount = findViewById(R.id.txtAmount);
         txtTransactionCode = findViewById(R.id.txtTransactionCode);
-        lblDateExpiry = findViewById(R.id.lblDateExpiry);
-        lblTimeExpiry = findViewById(R.id.lblTimeExpiry);
+        lblDateTimeExpiry = findViewById(R.id.lblDateTimeExpiry);
         txtAdditionalData = findViewById(R.id.txtAdditionalData);
         txtPaymentConcept = findViewById(R.id.txtPaymentConcept);
         txtUserEmail = findViewById(R.id.txtUserEmail);
@@ -117,8 +115,6 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         documentTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spiUserDocumentType.setAdapter(documentTypeAdapter);
 
-        setCurrentDate(this.year, this.month, this.dayOfMonth);
-        setCurrentTime(this.hourOfDay, this.minute);
     }
 
     private void initCurrencyValues() {
@@ -147,22 +143,14 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         documentTypeNameList.add(getString(R.string.document_pas));
     }
 
-    private void setCurrentDate(int year, int month, int dayOfMonth) {
-        lblDateExpiry.setText(getString(R.string.dateformat_with_values,
+    private void setCurrentDateTime() {
+
+        String pm_am = (hourOfDay <= 12) ? "AM" : "PM";
+
+        lblDateTimeExpiry.setText(getString(R.string.dateformat_with_values,
                 Utils.addZeroToNumber(String.valueOf(year)),
                 Utils.addZeroToNumber(String.valueOf(month + 1)),
-                String.valueOf(dayOfMonth)));
-    }
-
-    private void setCurrentTime(int hourOfDay, int minute) {
-        String pm_am;
-        if (hourOfDay <= 12) {
-            pm_am = "AM";
-        } else {
-            pm_am = "PM";
-        }
-
-        lblTimeExpiry.setText(getString(R.string.timeformat_with_values,
+                String.valueOf(dayOfMonth),
                 Utils.addZeroToNumber(String.valueOf(hourOfDay)),
                 Utils.addZeroToNumber(String.valueOf(minute)),
                 pm_am));
@@ -182,14 +170,17 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         }
         cipRequest.setTransactionCode(txtTransactionCode.getText().toString());
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, this.year);
-        calendar.set(Calendar.MONTH, this.month);
-        calendar.set(Calendar.DATE, this.dayOfMonth);
-        calendar.set(Calendar.HOUR_OF_DAY, this.hourOfDay);
-        calendar.set(Calendar.MINUTE, this.minute);
-        calendar.set(Calendar.SECOND, 0);
-        cipRequest.setDateExpiry(calendar.getTime());
+        if (!lblDateTimeExpiry.getText().toString().isEmpty()) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.YEAR, this.year);
+            calendar.set(Calendar.MONTH, this.month);
+            calendar.set(Calendar.DATE, this.dayOfMonth);
+            calendar.set(Calendar.HOUR_OF_DAY, this.hourOfDay);
+            calendar.set(Calendar.MINUTE, this.minute);
+            calendar.set(Calendar.SECOND, 0);
+            cipRequest.setDateExpiry(calendar.getTime());
+        }
+
         cipRequest.setAdditionalData(txtAdditionalData.getText().toString());
         cipRequest.setPaymentConcept(txtPaymentConcept.getText().toString());
         cipRequest.setUserEmail(txtUserEmail.getText().toString());
@@ -197,8 +188,12 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         cipRequest.setUserLastName(txtUserLastName.getText().toString());
         cipRequest.setUserUbigeo(txtUserUbigeo.getText().toString());
         cipRequest.setUserCountry(txtUserCountry.getText().toString());
-        cipRequest.setUserDocumentType(documentTypeValueList.get(spiUserDocumentType.getSelectedItemPosition()));
-        cipRequest.setUserDocumentNumber(txtUserDocumentNumber.getText().toString());
+
+        if (!txtUserDocumentNumber.getText().toString().isEmpty()) {
+            cipRequest.setUserDocumentType(documentTypeValueList.get(spiUserDocumentType.getSelectedItemPosition()));
+            cipRequest.setUserDocumentNumber(txtUserDocumentNumber.getText().toString());
+        }
+
         cipRequest.setUserPhone(txtUserPhone.getText().toString());
         cipRequest.setUserCodeCountry(txtUserCodeCountry.getText().toString());
         if (!txtAdminEmail.getText().toString().isEmpty()) {
@@ -248,7 +243,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         datePickerDialogFragment.show(getSupportFragmentManager(), "date_picker_dialog_fragment");
     }
 
-    public void showTimePickerDialog(View view) {
+    public void showTimePickerDialog() {
         DialogFragment timePickerDialogFragment = TimePickerDialogFragment.newInstance();
         timePickerDialogFragment.show(getSupportFragmentManager(), "time_picker_dialog_fragment");
     }
@@ -258,13 +253,13 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         this.year = year;
         this.month = month;
         this.dayOfMonth = dayOfMonth;
-        setCurrentDate(this.year, this.month, this.dayOfMonth);
+        showTimePickerDialog();
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         this.hourOfDay = hourOfDay;
         this.minute = minute;
-        setCurrentTime(this.hourOfDay, this.minute);
+        setCurrentDateTime();
     }
 }

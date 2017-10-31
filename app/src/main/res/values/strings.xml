@@ -75,9 +75,10 @@
     <string name="amount_subtitle2">Amount :</string>
     <string name="date_expiry_subtitle2">Date Expiry :</string>
 
-    <string name="dateformat_with_values">%1$s/%2$s/%3$s</string>
+    <string name="dateformat_with_values">%1$s/%2$s/%3$s %4$s:%5$s %6$s</string>
 
     <string name="timeformat_with_values">%1$s:%2$s %3$s</string>
     <string name="new_cip">New Cip</string>
     <string name="limit_search_alert">Ha alcanzado el límite de búsquedas</string>
+    <string name="date_expire_hint">DateExpire</string>
 </resources>
