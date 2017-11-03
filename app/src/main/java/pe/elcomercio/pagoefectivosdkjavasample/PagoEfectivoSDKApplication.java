@@ -18,6 +18,7 @@ public class PagoEfectivoSDKApplication extends Application {
         pagoEfectivoSdk.setServiceId(10);
         pagoEfectivoSdk.setAccessKey("AKIPJP77AHN2DKVIJPR1");
         pagoEfectivoSdk.setSecretKey("Nfybo8h0yN7CFN1ycX+XaG99pj/y3Vt25urt1PR1");
+        pagoEfectivoSdk.setSandBox(true);
     }
 
 }
