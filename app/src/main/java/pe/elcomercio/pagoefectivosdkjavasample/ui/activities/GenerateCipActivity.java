@@ -243,7 +243,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         datePickerDialogFragment.show(getSupportFragmentManager(), "date_picker_dialog_fragment");
     }
 
-    public void showTimePickerDialog() {
+    private void showTimePickerDialog() {
         DialogFragment timePickerDialogFragment = TimePickerDialogFragment.newInstance();
         timePickerDialogFragment.show(getSupportFragmentManager(), "time_picker_dialog_fragment");
     }
