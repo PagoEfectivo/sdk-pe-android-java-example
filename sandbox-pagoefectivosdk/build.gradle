@@ -1,2 +1,2 @@
 configurations.maybeCreate("default")
-artifacts.add("default", file('sandbox-pagoefectivosdk.aar'))
+artifacts.add("default", file('pagoefectivosdk-release.aar'))
