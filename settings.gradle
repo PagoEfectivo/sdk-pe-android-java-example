@@ -1,1 +1,1 @@
-include ':app', ':sandbox-pagoefectivosdk'
+include ':app', ':pagoefectivosdk-release'
