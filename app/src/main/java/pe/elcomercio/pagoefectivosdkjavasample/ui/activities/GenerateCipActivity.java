@@ -41,8 +41,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
     private Spinner spiUserDocumentType;
     private EditText txtAmount;
     private EditText txtTransactionCode;
-    private TextView lblDateExpiry;
-    private TextView lblTimeExpiry;
+    private TextView lblDateTimeExpiry;
     private EditText txtAdditionalData;
     private EditText txtPaymentConcept;
     private EditText txtUserEmail;
@@ -57,7 +56,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
 
     private Toast toastDialog;
 
-    final Calendar calendar = Calendar.getInstance();
+    private final Calendar calendar = Calendar.getInstance();
 
     private int year = calendar.get(Calendar.YEAR);
     private int month = calendar.get(Calendar.MONTH);
@@ -66,11 +65,11 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
     private int hourOfDay = calendar.get(Calendar.HOUR);
     private int minute = calendar.get(Calendar.MINUTE);
 
-    private List<String> currencyNameList = new ArrayList<>();
-    private List<String> documentTypeNameList = new ArrayList<>();
+    private final List<String> currencyNameList = new ArrayList<>();
+    private final List<String> documentTypeNameList = new ArrayList<>();
 
-    private List<Currency> currencyValueList = new ArrayList<>();
-    private List<DocumentType> documentTypeValueList = new ArrayList<>();
+    private final List<Currency> currencyValueList = new ArrayList<>();
+    private final List<DocumentType> documentTypeValueList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,23 +88,22 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         instance = PagoEfectivoSdk.getInstance();
 
         //Setting Up Views
-        spiCurrency = (Spinner) findViewById(R.id.spiCurrency);
-        spiUserDocumentType = (Spinner) findViewById(R.id.spiUserDocumentType);
-        txtAmount = (EditText) findViewById(R.id.txtAmount);
-        txtTransactionCode = (EditText) findViewById(R.id.txtTransactionCode);
-        lblDateExpiry = (TextView) findViewById(R.id.lblDateExpiry);
-        lblTimeExpiry = (TextView) findViewById(R.id.lblTimeExpiry);
-        txtAdditionalData = (EditText) findViewById(R.id.txtAdditionalData);
-        txtPaymentConcept = (EditText) findViewById(R.id.txtPaymentConcept);
-        txtUserEmail = (EditText) findViewById(R.id.txtUserEmail);
-        txtUserName = (EditText) findViewById(R.id.txtUserName);
-        txtUserLastName = (EditText) findViewById(R.id.txtUserLastName);
-        txtUserUbigeo = (EditText) findViewById(R.id.txtUserUbigeo);
-        txtUserCountry = (EditText) findViewById(R.id.txtUserCountry);
-        txtUserDocumentNumber = (EditText) findViewById(R.id.txtUserDocumentNumber);
-        txtUserPhone = (EditText) findViewById(R.id.txtUserPhone);
-        txtUserCodeCountry = (EditText) findViewById(R.id.txtUserCodeCountry);
-        txtAdminEmail = (EditText) findViewById(R.id.txtAdminEmail);
+        spiCurrency = findViewById(R.id.spiCurrency);
+        spiUserDocumentType = findViewById(R.id.spiUserDocumentType);
+        txtAmount = findViewById(R.id.txtAmount);
+        txtTransactionCode = findViewById(R.id.txtTransactionCode);
+        lblDateTimeExpiry = findViewById(R.id.lblDateTimeExpiry);
+        txtAdditionalData = findViewById(R.id.txtAdditionalData);
+        txtPaymentConcept = findViewById(R.id.txtPaymentConcept);
+        txtUserEmail = findViewById(R.id.txtUserEmail);
+        txtUserName = findViewById(R.id.txtUserName);
+        txtUserLastName = findViewById(R.id.txtUserLastName);
+        txtUserUbigeo = findViewById(R.id.txtUserUbigeo);
+        txtUserCountry = findViewById(R.id.txtUserCountry);
+        txtUserDocumentNumber = findViewById(R.id.txtUserDocumentNumber);
+        txtUserPhone = findViewById(R.id.txtUserPhone);
+        txtUserCodeCountry = findViewById(R.id.txtUserCodeCountry);
+        txtAdminEmail = findViewById(R.id.txtAdminEmail);
 
         //Setting Up currency adapter
         ArrayAdapter<String> currencyAdapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, currencyNameList);
@@ -117,8 +115,6 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         documentTypeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spiUserDocumentType.setAdapter(documentTypeAdapter);
 
-        setCurrentDate(this.year, this.month, this.dayOfMonth);
-        setCurrentTime(this.hourOfDay, this.minute);
     }
 
     private void initCurrencyValues() {
@@ -147,22 +143,14 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         documentTypeNameList.add(getString(R.string.document_pas));
     }
 
-    private void setCurrentDate(int year, int month, int dayOfMonth) {
-        lblDateExpiry.setText(getString(R.string.dateformat_with_values,
+    private void setCurrentDateTime() {
+
+        String pm_am = (hourOfDay <= 12) ? "AM" : "PM";
+
+        lblDateTimeExpiry.setText(getString(R.string.dateformat_with_values,
                 Utils.addZeroToNumber(String.valueOf(year)),
                 Utils.addZeroToNumber(String.valueOf(month + 1)),
-                String.valueOf(dayOfMonth)));
-    }
-
-    private void setCurrentTime(int hourOfDay, int minute) {
-        String pm_am;
-        if (hourOfDay <= 12) {
-            pm_am = "AM";
-        } else {
-            pm_am = "PM";
-        }
-
-        lblTimeExpiry.setText(getString(R.string.timeformat_with_values,
+                String.valueOf(dayOfMonth),
                 Utils.addZeroToNumber(String.valueOf(hourOfDay)),
                 Utils.addZeroToNumber(String.valueOf(minute)),
                 pm_am));
@@ -182,14 +170,17 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         }
         cipRequest.setTransactionCode(txtTransactionCode.getText().toString());
 
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(Calendar.YEAR, this.year);
-        calendar.set(Calendar.MONTH, this.month);
-        calendar.set(Calendar.DATE, this.dayOfMonth);
-        calendar.set(Calendar.HOUR_OF_DAY, this.hourOfDay);
-        calendar.set(Calendar.MINUTE, this.minute);
-        calendar.set(Calendar.SECOND, 0);
-        cipRequest.setDateExpiry(calendar.getTime());
+        if (!lblDateTimeExpiry.getText().toString().isEmpty()) {
+            Calendar calendar = Calendar.getInstance();
+            calendar.set(Calendar.YEAR, this.year);
+            calendar.set(Calendar.MONTH, this.month);
+            calendar.set(Calendar.DATE, this.dayOfMonth);
+            calendar.set(Calendar.HOUR_OF_DAY, this.hourOfDay);
+            calendar.set(Calendar.MINUTE, this.minute);
+            calendar.set(Calendar.SECOND, 0);
+            cipRequest.setDateExpiry(calendar.getTime());
+        }
+
         cipRequest.setAdditionalData(txtAdditionalData.getText().toString());
         cipRequest.setPaymentConcept(txtPaymentConcept.getText().toString());
         cipRequest.setUserEmail(txtUserEmail.getText().toString());
@@ -197,8 +188,12 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         cipRequest.setUserLastName(txtUserLastName.getText().toString());
         cipRequest.setUserUbigeo(txtUserUbigeo.getText().toString());
         cipRequest.setUserCountry(txtUserCountry.getText().toString());
-        cipRequest.setUserDocumentType(documentTypeValueList.get(spiUserDocumentType.getSelectedItemPosition()));
-        cipRequest.setUserDocumentNumber(txtUserDocumentNumber.getText().toString());
+
+        if (!txtUserDocumentNumber.getText().toString().isEmpty()) {
+            cipRequest.setUserDocumentType(documentTypeValueList.get(spiUserDocumentType.getSelectedItemPosition()));
+            cipRequest.setUserDocumentNumber(txtUserDocumentNumber.getText().toString());
+        }
+
         cipRequest.setUserPhone(txtUserPhone.getText().toString());
         cipRequest.setUserCodeCountry(txtUserCodeCountry.getText().toString());
         if (!txtAdminEmail.getText().toString().isEmpty()) {
@@ -248,7 +243,7 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         datePickerDialogFragment.show(getSupportFragmentManager(), "date_picker_dialog_fragment");
     }
 
-    public void showTimePickerDialog(View view) {
+    private void showTimePickerDialog() {
         DialogFragment timePickerDialogFragment = TimePickerDialogFragment.newInstance();
         timePickerDialogFragment.show(getSupportFragmentManager(), "time_picker_dialog_fragment");
     }
@@ -258,13 +253,13 @@ public class GenerateCipActivity extends AppCompatActivity implements CipListene
         this.year = year;
         this.month = month;
         this.dayOfMonth = dayOfMonth;
-        setCurrentDate(this.year, this.month, this.dayOfMonth);
+        showTimePickerDialog();
     }
 
     @Override
     public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
         this.hourOfDay = hourOfDay;
         this.minute = minute;
-        setCurrentTime(this.hourOfDay, this.minute);
+        setCurrentDateTime();
     }
 }

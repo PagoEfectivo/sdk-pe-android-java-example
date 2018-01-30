@@ -33,10 +33,10 @@
 
             <Spinner
                 android:id="@+id/spiCurrency"
+                style="@style/Base.Widget.AppCompat.Spinner.Underlined"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                style="@style/Base.Widget.AppCompat.Spinner.Underlined"/>
+                android:layout_weight="1" />
 
             <android.support.design.widget.TextInputLayout
                 android:layout_width="130dp"
@@ -55,63 +55,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <TextView
+                android:id="@+id/lblDateTimeExpiry"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:clickable="true"
+                android:drawableEnd="@drawable/ic_arrow_drop_down_grey_700_24dp"
+                android:drawableRight="@drawable/ic_arrow_drop_down_grey_700_24dp"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:hint="@string/date_expire_hint"
+                android:onClick="showDatePickerDialog"
+                android:textSize="17sp" />
 
-                <TextView
-                    android:id="@+id/lblDateExpiry"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    android:layout_margin="5dp"
-                    android:drawableRight="@drawable/ic_arrow_drop_down_grey_700_24dp"
-                    android:drawableEnd="@drawable/ic_arrow_drop_down_grey_700_24dp"
-                    android:gravity="center_vertical"
-                    android:onClick="showDatePickerDialog"
-                    android:textSize="17sp" android:focusable="true"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/md_grey_600" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="120dp"
-                android:layout_height="match_parent"
-                android:layout_margin="5dp"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/lblTimeExpiry"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:clickable="true"
-                    android:layout_margin="5dp"
-                    android:drawableRight="@drawable/ic_arrow_drop_down_grey_700_24dp"
-                    android:drawableEnd="@drawable/ic_arrow_drop_down_grey_700_24dp"
-                    android:gravity="center_vertical"
-                    android:onClick="showTimePickerDialog"
-                    android:textSize="17sp" android:focusable="true"/>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/md_grey_600" />
-
-            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/md_grey_600" />
 
         </LinearLayout>
 
@@ -173,7 +139,6 @@
                     android:maxLines="1" />
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
-
 
 
         <LinearLayout

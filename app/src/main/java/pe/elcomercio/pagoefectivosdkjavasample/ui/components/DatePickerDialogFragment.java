@@ -1,9 +1,10 @@
 package pe.elcomercio.pagoefectivosdkjavasample.ui.components;
 
-import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.app.DatePickerDialog.OnDateSetListener;
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.widget.AppCompatButton;
@@ -21,17 +22,17 @@ public class DatePickerDialogFragment extends DialogFragment implements View.OnC
     private DatePickerDialog.OnDateSetListener mListener;
 
     private DatePicker datePicker;
-    AppCompatButton btnCancel;
-    AppCompatButton btnOk;
 
     public static DatePickerDialogFragment newInstance(){
         return new DatePickerDialogFragment();
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-        this.mListener = (OnDateSetListener) activity;
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context != null) {
+            mListener = (OnDateSetListener) context;
+        }
     }
 
     @Override
@@ -42,19 +43,20 @@ public class DatePickerDialogFragment extends DialogFragment implements View.OnC
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_dialog_date_picker, container, false);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
 
         getDialog().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         getDialog().getWindow().requestFeature(Window.FEATURE_NO_TITLE);
 
         datePicker = view.findViewById(R.id.datePicker);
-        btnCancel = view.findViewById(R.id.btnCancel);
-        btnOk = view.findViewById(R.id.btnOk);
+        AppCompatButton btnCancel = view.findViewById(R.id.btnCancel);
+        AppCompatButton btnOk = view.findViewById(R.id.btnOk);
 
         assert btnOk != null;
         assert btnCancel != null;

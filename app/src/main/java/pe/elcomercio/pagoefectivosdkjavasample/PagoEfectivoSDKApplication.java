@@ -8,6 +8,7 @@ import pe.elcomercio.pagoefectivosdk.PagoEfectivoSdk;
  * Created by Tohure and CarlitosDroid on 16/10/17.
  */
 
+@SuppressWarnings({"ALL", "DefaultFileTemplate"})
 public class PagoEfectivoSDKApplication extends Application {
 
     @Override
@@ -17,6 +18,7 @@ public class PagoEfectivoSDKApplication extends Application {
         pagoEfectivoSdk.setServiceId(10);
         pagoEfectivoSdk.setAccessKey("AKIPJP77AHN2DKVIJPR1");
         pagoEfectivoSdk.setSecretKey("Nfybo8h0yN7CFN1ycX+XaG99pj/y3Vt25urt1PR1");
+        pagoEfectivoSdk.setSandBox(true);
     }
 
 }
