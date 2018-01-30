@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="pe.elcomercio.pagoefectivosdkjavasample">
+    package="pe.elcomercio.pagoefectivosdkjavasample"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:name=".PagoEfectivoSDKApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher_pe"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:roundIcon="@mipmap/ic_launcher_pe_round"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:roundIcon">
         <activity
             android:name=".ui.activities.MainActivity"
             android:label="@string/app_name"
